@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class AuthController extends Controller {
-	
+
     public function register(Request $request) {
 	    $this->validate($request, [
             'name' => 'required|min:3',
@@ -23,14 +23,12 @@ class AuthController extends Controller {
         $token = $user->createToken('TutsForWeb')->accessToken;
  
         return response()->json(['redirect_uri' => 'https://www.google.com?token='.$token], 200);
-        // return redirect()->away('https://www.google.com?token='.$token);
 	}
 
 	public function login(Request $request) {
 	    $user = User::where('email', $request->email)->first();
 
 	    if ($user) {
-	    	// return response($user, 200);
 	        if ($user->password == md5($request->password)) {
 	            $token = $user->createToken('Laravel Password Grant Client')->accessToken;
 	            $response = ['redirect_uri' => 'https://www.google.com?token='.$token, 'status' => 200,  'token' => $token];
