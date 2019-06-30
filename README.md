@@ -74,24 +74,22 @@ Documentação do Passport: https://laravel.com/docs/5.8/passport
 
 
 **Exemplo:**
-`
+
+```
 $ch = curl_init();
 
 $authorization = 'Authorization: Bearer '.$token;
 
 curl_setopt_array($ch, [
     CURLOPT_URL => 'http://localhost:8000/api/user',
-    
-    CURLOPT_POST => false,
-    
-    CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
-    
-    CURLOPT_RETURNTRANSFER => true
+ 	CURLOPT_POST => false,
+   	CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
+   	CURLOPT_RETURNTRANSFER => true
 ]);
 
 $resultado = curl_exec($ch);
 $json = json_decode($resultado);
-
 echo $resultado;
+
 curl_close($ch);
-`
+```
