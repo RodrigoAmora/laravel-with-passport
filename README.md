@@ -36,14 +36,16 @@ Documentação do Passport: https://laravel.com/docs/5.8/passport
 }
 `
 
-<br>
+
+
 **Logout**
 
 **Enpoint:** `/api/logout`
 
 **Method:** `Get`
 
-<br>
+
+
 **Register**
 
 **Enpoint:** `/api/register`
@@ -60,7 +62,8 @@ Documentação do Passport: https://laravel.com/docs/5.8/passport
 }
 `
 
-<br>
+
+
 **User**
 
 **Enpoint:** `/api/user`
